@@ -34,8 +34,6 @@ public class DailyMod implements PostUpdateSubscriber {
         DailyScreen dailyScreen = new DailyScreen();
         dailyScreen.open();
         if (!ModHelper.enabledMods.isEmpty()) {
-            logger.info("XXXXXX dailypatch ok");
-            logger.info("XXXXXX dailypatch mods={}", ModHelper.enabledMods);
             List<String> modLines = ModHelper.enabledMods.stream().map(m -> String.format(Locale.getDefault(),
                             "{\"name\": \"%s\", \"description\": \"%s\", \"positive\": %s}", m.name, m.description, m.positive))
                     .collect(Collectors.toList());
